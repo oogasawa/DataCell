@@ -7,9 +7,9 @@ import net.ogalab.Pipe.Out;
 import net.ogalab.Pipe.Pipe;
 import net.ogalab.datacell.container.DCContainer;
 import net.ogalab.datacell.container.DCContainerFactory;
-import net.ogalab.microutil.container.ListUtil;
-import net.ogalab.microutil.exception.RuntimeExceptionUtil;
-import net.ogalab.microutil.type.StringUtil;
+import net.ogalab.util.container.ListUtil;
+import net.ogalab.util.exception.RuntimeExceptionUtil;
+import net.ogalab.util.fundamental.StringUtil;
 
 import org.apache.commons.configuration.ConfigurationException;
 
@@ -95,15 +95,9 @@ public class DCJoin extends Filter {
                 if (v == null || v.length() == 0) {
                     v = notAvailable;
                 }
-//                out.putLine(line.trim() + "\t" + v);
-                if (line.endsWith("\n"))
-                	line = line.substring(0, line.length() - 1);
-                out.putLine(line + "\t" + v);
+                out.putLine(line.trim() + "\t" + v);
             } else {
-//                out.putLine(line.trim() + "\t" + notAvailable);
-                if (line.endsWith("\n"))
-                	line = line.substring(0, line.length() - 1);
-                out.putLine(line + "\t" + notAvailable);
+                out.putLine(line.trim() + "\t" + notAvailable);
             }
         }
         out.end();
@@ -139,16 +133,10 @@ public class DCJoin extends Filter {
                         v = notAvailable;
                     }
 
-//                    out.putLine(line.trim() + "\t" + v);
-                    if (line.endsWith("\n"))
-                    	line = line.substring(0, line.length() - 1);
-                    out.putLine(line + "\t" + v);
+                    out.putLine(line.trim() + "\t" + v);
                 }
             } else {
-//                out.putLine(line.trim() + "\t" + notAvailable);
-                if (line.endsWith("\n"))
-                	line = line.substring(0, line.length() - 1);
-                out.putLine(line + "\t" + notAvailable);
+                out.putLine(line.trim() + "\t" + notAvailable);
             }
         }
         out.end();

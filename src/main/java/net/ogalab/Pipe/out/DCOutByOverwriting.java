@@ -1,6 +1,7 @@
 package net.ogalab.Pipe.out;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 
 import org.apache.commons.configuration.ConfigurationException;
@@ -8,7 +9,8 @@ import org.apache.commons.configuration.ConfigurationException;
 import net.ogalab.Pipe.Out;
 import net.ogalab.datacell.container.DCContainer;
 import net.ogalab.datacell.container.DCContainerFactory;
-import net.ogalab.microutil.type.StringUtil;
+import net.ogalab.util.fundamental.StringUtil;
+import net.ogalab.util.os.FileIO;
 
 public class DCOutByOverwriting implements Out {
 
@@ -31,7 +33,7 @@ public class DCOutByOverwriting implements Out {
 	
 	public void putLine(String line) {
 		ArrayList<String> col = StringUtil.splitByTab(line);
-		dbObj.putRowWithReplacingValues(ds, col.get(0), pred, col.get(1));
+		dbObj.putRowByOverwriting(ds, col.get(0), pred, col.get(1));
 	}
 
 	public void end() {

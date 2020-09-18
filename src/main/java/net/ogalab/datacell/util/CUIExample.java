@@ -4,7 +4,7 @@ import org.apache.commons.configuration.ConfigurationException;
 
 import net.ogalab.datacell.container.DCContainer;
 import net.ogalab.datacell.container.DCContainerFactory;
-import net.ogalab.microutil.type.Type;
+import net.ogalab.util.fundamental.Type;
 
 
 /** DBWriterの動作確認プログラム。

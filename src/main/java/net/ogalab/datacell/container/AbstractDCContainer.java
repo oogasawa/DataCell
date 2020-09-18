@@ -10,9 +10,9 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import net.ogalab.datacell.DataCell;
-import net.ogalab.microutil.container.ListUtil;
-import net.ogalab.microutil.container.SetUtil;
-import net.ogalab.microutil.type.StringUtil;
+import net.ogalab.util.container.ListUtil;
+import net.ogalab.util.container.SetUtil;
+import net.ogalab.util.fundamental.StringUtil;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -431,11 +431,11 @@ public abstract class AbstractDCContainer implements DCContainer {
         putRowIfKeyValuePairIsAbsent(cell.getDataSet(), cell.getID(), cell.getPredicate(), cell.getValue(), trim);
     }
 
-    public void putRowWithReplacingValues(String tableName, String key, String value) {
-        putRowWithReplacingValues(tableName, key, value, false);
+    public void putRowByOverwriting(String tableName, String key, String value) {
+        putRowByOverwriting(tableName, key, value, false);
     }
 
-    public void putRowWithReplacingValues(String tableName, String key, String value, boolean trim) {
+    public void putRowByOverwriting(String tableName, String key, String value, boolean trim) {
         //logger.debug("(overwriting)\"" + value + "\"");
 
         if (trim == true) {
@@ -452,24 +452,24 @@ public abstract class AbstractDCContainer implements DCContainer {
 
     }
 
-    public void putRowWithReplacingValues(String dataset, String id, String pred, String value) {
-        putRowWithReplacingValues(dataset, id, pred, value, false);
+    public void putRowByOverwriting(String dataset, String id, String pred, String value) {
+        putRowByOverwriting(dataset, id, pred, value, false);
     }
 
-    public void putRowWithReplacingValues(String dataset, String id, String pred, String value, boolean trim) {
+    public void putRowByOverwriting(String dataset, String id, String pred, String value, boolean trim) {
         if (trim == true) {
             id = trimIt(id);
             value = trimIt(value);
         }
-        putRowWithReplacingValues(nameConverter.makeTableName(dataset, pred), id, value);
+        putRowByOverwriting(nameConverter.makeTableName(dataset, pred), id, value);
     }
 
-    public void putRowWithReplacingValues(DataCell cell) {
-        putRowWithReplacingValues(cell.getDataSet(), cell.getID(), cell.getPredicate(), cell.getValue());
+    public void putRowByOverwriting(DataCell cell) {
+        putRowByOverwriting(cell.getDataSet(), cell.getID(), cell.getPredicate(), cell.getValue());
     }
 
-    public void putRowWithReplacingValues(DataCell cell, boolean trim) {
-        putRowWithReplacingValues(cell.getDataSet(), cell.getID(), cell.getPredicate(), cell.getValue(), trim);
+    public void putRowByOverwriting(DataCell cell, boolean trim) {
+        putRowByOverwriting(cell.getDataSet(), cell.getID(), cell.getPredicate(), cell.getValue(), trim);
     }
 
 	// ------

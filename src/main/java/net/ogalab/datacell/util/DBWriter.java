@@ -12,8 +12,9 @@ import java.util.ArrayList;
 import net.ogalab.datacell.DataCell;
 import net.ogalab.datacell.container.DCContainer;
 import net.ogalab.datacell.container.DCContainerFactory;
-import net.ogalab.microutil.exception.RuntimeExceptionUtil;
-import net.ogalab.microutil.type.StringUtil;
+import net.ogalab.util.cli.Parameter;
+import net.ogalab.util.exception.RuntimeExceptionUtil;
+import net.ogalab.util.fundamental.StringUtil;
 
 /**
  *
@@ -62,7 +63,6 @@ import net.ogalab.microutil.type.StringUtil;
  */
 public class DBWriter {
 
-    /*
     protected Parameter param = new Parameter();
     protected DCContainerFactory facObj = null;
 
@@ -117,9 +117,12 @@ public class DBWriter {
 
     public void writeToDB(String datafile, String database) throws FileNotFoundException {
 
+        
+        
         //if (!param.getString("DeleteTableIfExists").equalsIgnoreCase("false")) {
         //    deleteTableIfExists(database);
         //}
+
         if (param.getString("Format").toLowerCase().equals("tdf4")) {
             InputStream istr = new FileInputStream(datafile);
             tdf4ToDB(istr, database);
@@ -275,11 +278,10 @@ public class DBWriter {
 
         }
     }
-
+    
     public void dctextToDB(String datafile, String dbName) {
         DCTextParser p = new DCTextParser();
         p.parse(new File(datafile), facObj, dbName);
     }
-*/
 
 }

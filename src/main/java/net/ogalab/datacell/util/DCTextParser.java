@@ -2,6 +2,7 @@ package net.ogalab.datacell.util;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.UUID;
@@ -12,8 +13,9 @@ import net.ogalab.datacell.DataCell;
 import net.ogalab.datacell.container.DCContainer;
 import net.ogalab.datacell.container.DCContainerFactory;
 import net.ogalab.datacell.mem.MemDBFactory;
-import net.ogalab.microutil.type.StringUtil;
-import net.ogalab.microutil.file.FileIO;
+import net.ogalab.util.container.ListUtil;
+import net.ogalab.util.fundamental.StringUtil;
+import net.ogalab.util.os.FileIO;
 
 import org.apache.commons.configuration.ConfigurationException;
 import org.slf4j.Logger;
@@ -222,7 +224,7 @@ public class DCTextParser {
             ArrayList<String> kv = getPredAndValue(line);
             logger.debug(ds + ", " + id + ", " + kv.get(0) + ", " + kv.get(1));
             if (overwrite(line)) {
-                dbObj.putRowWithReplacingValues(ds, id, kv.get(0), kv.get(1));
+                dbObj.putRowByOverwriting(ds, id, kv.get(0), kv.get(1));
             } else {
                 dbObj.putRowIfKeyValuePairIsAbsent(ds, id, kv.get(0), kv.get(1));
             }
@@ -232,7 +234,7 @@ public class DCTextParser {
             state = 0;
             logger.debug(ds + ", " + id + ", " + pred + ", " + sb.toString());
             if (overwrite(line)) {
-                dbObj.putRowWithReplacingValues(ds, id, pred, sb.toString());
+                dbObj.putRowByOverwriting(ds, id, pred, sb.toString());
             } else {
                 dbObj.putRowIfKeyValuePairIsAbsent(ds, id, pred, sb.toString());
             }

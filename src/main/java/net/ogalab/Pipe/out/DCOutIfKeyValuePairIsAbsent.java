@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import net.ogalab.Pipe.Out;
 import net.ogalab.datacell.container.DCContainer;
 import net.ogalab.datacell.container.DCContainerFactory;
-import net.ogalab.microutil.type.StringUtil;
+import net.ogalab.util.fundamental.StringUtil;
 
 import org.apache.commons.configuration.ConfigurationException;
 

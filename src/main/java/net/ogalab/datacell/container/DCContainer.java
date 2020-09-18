@@ -262,11 +262,11 @@ public interface DCContainer extends Iterable<DataCell> {
 	
 	public void putRowIfKeyIsAbsent(DataCell cell);
 	
-	public void putRowWithReplacingValues(String tableName, String id, String value); // keyが一致したらvalueを上書き
+	public void putRowByOverwriting(String tableName, String id, String value); // keyが一致したらvalueを上書き
 
-	public void putRowWithReplacingValues(String ds, String id, String pred, String value); // keyが一致したらvalueを上書き
+	public void putRowByOverwriting(String ds, String id, String pred, String value); // keyが一致したらvalueを上書き
 	
-	public void putRowWithReplacingValues(DataCell cell);
+	public void putRowByOverwriting(DataCell cell);
 	
 	public void putRow(String ds, String id, String pred, String value, boolean trim);
 	
@@ -284,11 +284,11 @@ public interface DCContainer extends Iterable<DataCell> {
 	
 	public void putRowIfKeyIsAbsent(DataCell cell, boolean trim);
 	
-	public void putRowWithReplacingValues(String tableName, String id, String value, boolean trim); // keyが一致したらvalueを上書き
+	public void putRowByOverwriting(String tableName, String id, String value, boolean trim); // keyが一致したらvalueを上書き
 
-	public void putRowWithReplacingValues(String ds, String id, String pred, String value, boolean trim); // keyが一致したらvalueを上書き
+	public void putRowByOverwriting(String ds, String id, String pred, String value, boolean trim); // keyが一致したらvalueを上書き
 
-	public void putRowWithReplacingValues(DataCell cell, boolean trim);
+	public void putRowByOverwriting(DataCell cell, boolean trim);
 		
 	//public String getDataset(String tableName);
 	

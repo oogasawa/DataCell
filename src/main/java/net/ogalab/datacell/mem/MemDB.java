@@ -1,16 +1,24 @@
 package net.ogalab.datacell.mem;
 
+import java.io.File;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Set;
+import java.util.Spliterator;
 import java.util.function.Consumer;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import net.ogalab.datacell.DataCell;
 import net.ogalab.datacell.container.AbstractDCContainer;
 import net.ogalab.datacell.container.NameConverter;
-import net.ogalab.microutil.container.DuplicatedKeyUniqueValueHashMap;
-import net.ogalab.microutil.container.TreeSetUtil;
-import net.ogalab.microutil.exception.RuntimeExceptionUtil;
+import net.ogalab.util.container.DuplicatedKeyUniqueValueHashMap;
+import net.ogalab.util.container.TreeSetUtil;
+import net.ogalab.util.exception.RuntimeExceptionUtil;
+import net.ogalab.util.linux.Bash;
+import net.ogalab.util.os.FileIO;
 import org.slf4j.LoggerFactory;
 
 public class MemDB extends AbstractDCContainer {

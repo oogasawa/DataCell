@@ -9,7 +9,7 @@ import java.util.UUID;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import net.ogalab.microutil.file.FileIO;
+import net.ogalab.util.os.FileIO;
 
 public class DCTextComplementer {
 	

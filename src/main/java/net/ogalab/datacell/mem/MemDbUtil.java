@@ -16,7 +16,7 @@ import net.ogalab.datacell.DataCell;
 import net.ogalab.datacell.container.DCContainer;
 import net.ogalab.datacell.mem.MemDB;
 //import net.ogalab.dataupdator.ex.phase2a.SraSampleAndNcbiTaxonomySt2;
-import net.ogalab.microutil.file.FileIO;
+import net.ogalab.util.os.FileIO;
 import org.slf4j.LoggerFactory;
 
 /**

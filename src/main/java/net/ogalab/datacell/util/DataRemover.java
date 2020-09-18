@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import net.ogalab.datacell.container.DCContainer;
 import net.ogalab.datacell.container.DCContainerFactory;
-import net.ogalab.microutil.exception.RuntimeExceptionUtil;
+import net.ogalab.util.exception.RuntimeExceptionUtil;
 
 import org.apache.commons.configuration.ConfigurationException;
 import org.slf4j.Logger;

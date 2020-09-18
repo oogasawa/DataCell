@@ -371,13 +371,13 @@ abstract public class DCContainerTest {
 
 	@Test
 	public void testPutRowOverwriting() {
-		dbObj.putRowWithReplacingValues("ncbi_taxonomy", "9091", "scientific name", "Coturnix coturnix");
-		dbObj.putRowWithReplacingValues("ncbi_taxonomy", "9091", "scientific name", "Coturnix coturnix japonica");
-		dbObj.putRowWithReplacingValues("ncbi_taxonomy", "9774", "scientific name", "Sirenia");
-		dbObj.putRowWithReplacingValues("ncbi_taxonomy", "9779", "scientific name", "Proboscidea");
-		dbObj.putRowWithReplacingValues("ncbi_taxonomy", "9443", "scientific name", "Primates");
-		dbObj.putRowWithReplacingValues("ncbi_taxonomy", "9392", "scientific name", "Scandenitia");
-		dbObj.putRowWithReplacingValues("ncbi_taxonomy", "33554", "scientific name", "Carnivora");
+		dbObj.putRowByOverwriting("ncbi_taxonomy", "9091", "scientific name", "Coturnix coturnix");
+		dbObj.putRowByOverwriting("ncbi_taxonomy", "9091", "scientific name", "Coturnix coturnix japonica");
+		dbObj.putRowByOverwriting("ncbi_taxonomy", "9774", "scientific name", "Sirenia");
+		dbObj.putRowByOverwriting("ncbi_taxonomy", "9779", "scientific name", "Proboscidea");
+		dbObj.putRowByOverwriting("ncbi_taxonomy", "9443", "scientific name", "Primates");
+		dbObj.putRowByOverwriting("ncbi_taxonomy", "9392", "scientific name", "Scandenitia");
+		dbObj.putRowByOverwriting("ncbi_taxonomy", "33554", "scientific name", "Carnivora");
 		
 		ArrayList<String> result = dbObj.getValueList("ncbi_taxonomy", "9091", "scientific name");
 		assertEquals(1, result.size());
@@ -390,13 +390,13 @@ abstract public class DCContainerTest {
 		// When key, value strings have interruptive spaces, spaces are automatically trimmed.
 		// Therefore, following data are treated as the same key, value.
 		
-		dbObj.putRowWithReplacingValues("ncbi_taxonomy", "9091", "scientific name", "Coturnix coturnix japonica");
-		dbObj.putRowWithReplacingValues("ncbi_taxonomy", "9091", "scientific name", "Coturnix coturnix");
-		dbObj.putRowWithReplacingValues("ncbi_taxonomy", "9774", "scientific name", "Sirenia ");
-		dbObj.putRowWithReplacingValues("ncbi_taxonomy", "9779", "scientific name", " Proboscidea ");
-		dbObj.putRowWithReplacingValues("ncbi_taxonomy", "9443", "scientific name", "Primates  ");
-		dbObj.putRowWithReplacingValues("ncbi_taxonomy", "9392", "scientific name", "     Scandenitia ");
-		dbObj.putRowWithReplacingValues("ncbi_taxonomy", "33554", "scientific name", "Carnivora     ");
+		dbObj.putRowByOverwriting("ncbi_taxonomy", "9091", "scientific name", "Coturnix coturnix japonica");
+		dbObj.putRowByOverwriting("ncbi_taxonomy", "9091", "scientific name", "Coturnix coturnix");
+		dbObj.putRowByOverwriting("ncbi_taxonomy", "9774", "scientific name", "Sirenia ");
+		dbObj.putRowByOverwriting("ncbi_taxonomy", "9779", "scientific name", " Proboscidea ");
+		dbObj.putRowByOverwriting("ncbi_taxonomy", "9443", "scientific name", "Primates  ");
+		dbObj.putRowByOverwriting("ncbi_taxonomy", "9392", "scientific name", "     Scandenitia ");
+		dbObj.putRowByOverwriting("ncbi_taxonomy", "33554", "scientific name", "Carnivora     ");
 		
 		result = dbObj.getValueList("ncbi_taxonomy", "9091", "scientific name");
 		assertEquals(1, result.size());
