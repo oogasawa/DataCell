@@ -7,7 +7,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <simpleutil.version>8.0</simpleutil.version>
+        <simpleutil.version>8.0.3</simpleutil.version>
         <compiler.version>1.8</compiler.version>
     </properties>
 
@@ -98,16 +98,6 @@
 
     <!-- private repositories from which libraries are downloaded -->
     <repositories>
-        <repository>
-            <id>private-webdav-repository</id>
-            <name>oga private</name>
-            <url>dav:http://rgm.ogalab.net/maven2/</url>
-        </repository>
-        <repository>
-            <id>private-webdav-snapshot-repository</id>
-            <name>oga private snapshot</name>
-            <url>dav:http://rgm.ogalab.net/maven2/maven2-snapshot/</url>
-        </repository>
     </repositories>
 
 
@@ -115,16 +105,8 @@
     <distributionManagement>
         <!-- Configuration for webdav based private repositories -->
         <repository>
-            <uniqueVersion>false</uniqueVersion>
-            <id>private-webdav-repository</id>
-            <name>oga private</name>
-            <url>dav:http://rgm.ogalab.net/maven2/</url>
         </repository>
         <snapshotRepository>
-            <uniqueVersion>true</uniqueVersion>
-            <id>private-webdav-snapshot-repository</id>
-            <name>oga private snapshot</name>
-            <url>dav:http://rgm.ogalab.net/maven2/maven2-snapshot/</url>
         </snapshotRepository>
     </distributionManagement>
 </project>
