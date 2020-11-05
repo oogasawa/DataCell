@@ -46,7 +46,7 @@
         </dependency>
         <dependency>
             <groupId>net.ogalab</groupId>
-            <artifactId>MicroUtil-container</artifactId>
+            <artifactId>MicroUtil-containers</artifactId>
             <version>1.0.0</version>
         </dependency>
 
