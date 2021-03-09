@@ -125,14 +125,8 @@
     <!-- private repositories from which libraries are downloaded -->
     <repositories>
         <repository>
-            <id>private-webdav-repository</id>
-            <name>oga private</name>
-            <url>dav:http://www.ogalab.net/maven2/</url>
         </repository>
         <repository>
-            <id>private-webdav-snapshot-repository</id>
-            <name>oga private snapshot</name>
-            <url>dav:http://www.ogalab.net/maven2/maven2-snapshot/</url>
         </repository>
     </repositories>
 
@@ -141,16 +135,8 @@
     <distributionManagement>
         <!-- Configuration for webdav based private repositories -->
         <repository>
-            <uniqueVersion>false</uniqueVersion>
-            <id>private-webdav-repository</id>
-            <name>oga private</name>
-            <url>dav:http://www.ogalab.net/maven2/</url>
         </repository>
         <snapshotRepository>
-            <uniqueVersion>true</uniqueVersion>
-            <id>private-webdav-snapshot-repository</id>
-            <name>oga private snapshot</name>
-            <url>dav:http://www.ogalab.net/maven2/maven2-snapshot/</url>
         </snapshotRepository>
     </distributionManagement>
 </project>
