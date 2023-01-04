@@ -3,7 +3,9 @@ package com.github.oogasawa.datacell.mem;
 import com.github.oogasawa.datacell.container.AbstractDCContainerFactory;
 import com.github.oogasawa.datacell.container.DCContainer;
 
-import org.apache.commons.configuration.ConfigurationException;
+import org.apache.commons.configuration2.ex.ConfigurationException;
+
+
 
 public class MemDBFactory extends AbstractDCContainerFactory {
 	

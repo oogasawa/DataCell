@@ -4,12 +4,14 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.logging.Logger;
 
-import org.apache.commons.configuration.ConfigurationException;
+
 
 import com.github.oogasawa.Pipe.Out;
 import com.github.oogasawa.datacell.container.DCContainer;
 import com.github.oogasawa.datacell.container.DCContainerFactory;
 import com.github.oogasawa.utility.types.string.StringUtil;
+
+import org.apache.commons.configuration2.ex.ConfigurationException;
 
 
 public class DCOutByOverwriting implements Out {

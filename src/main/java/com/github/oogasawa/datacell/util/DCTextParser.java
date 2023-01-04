@@ -16,7 +16,9 @@ import com.github.oogasawa.datacell.mem.MemDBFactory;
 import com.github.oogasawa.utility.files.FileIO;
 import com.github.oogasawa.utility.types.string.StringUtil;
 
-import org.apache.commons.configuration.ConfigurationException;
+import org.apache.commons.configuration2.ex.ConfigurationException;
+
+
 
 
 /**

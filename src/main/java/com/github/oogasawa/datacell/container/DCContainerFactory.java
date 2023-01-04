@@ -1,6 +1,6 @@
 package com.github.oogasawa.datacell.container;
 
-import org.apache.commons.configuration.ConfigurationException;
+import org.apache.commons.configuration2.ex.ConfigurationException;
 
 public interface DCContainerFactory {
 

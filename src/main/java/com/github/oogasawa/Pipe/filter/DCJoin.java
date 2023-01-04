@@ -11,7 +11,9 @@ import com.github.oogasawa.datacell.container.DCContainerFactory;
 import com.github.oogasawa.utility.types.collection.ListUtil;
 import com.github.oogasawa.utility.types.string.StringUtil;
 
-import org.apache.commons.configuration.ConfigurationException;
+import org.apache.commons.configuration2.ex.ConfigurationException;
+
+
 
 public class DCJoin extends Filter {
 

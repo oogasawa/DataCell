@@ -8,7 +8,9 @@ import com.github.oogasawa.datacell.DataCell;
 import com.github.oogasawa.datacell.container.DCContainer;
 import com.github.oogasawa.datacell.container.DCContainerFactory;
 
-import org.apache.commons.configuration.ConfigurationException;
+import org.apache.commons.configuration2.ex.ConfigurationException;
+
+
 
 public class DataChecker {
 	
