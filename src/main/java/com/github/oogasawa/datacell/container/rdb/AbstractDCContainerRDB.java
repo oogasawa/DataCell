@@ -34,7 +34,6 @@ abstract public class AbstractDCContainerRDB extends AbstractDCContainer {
 
     public void appendRow(String tableName, String key, String value) {
         PreparedStatement pstmt = null;
-        // logger.debug("(appendRow: insert): \"" + value + "\"");
 
         try {
             pstmt = insertPool.get(tableName);
@@ -50,9 +49,7 @@ abstract public class AbstractDCContainerRDB extends AbstractDCContainer {
             pstmt.executeUpdate();
         } catch (Exception e) {
             logger.throwing("com.github.oogasawa.datacell.container.rdb.AbstractDCContainerRDB", "appenRow", e);
-            // logger.warn("appendRow: tableName: " + tableName);
-            // logger.warn("appendRow: key: " + key);
-            // logger.warn("appendRow: value: " + value);
+
             if (value.length() > 100) {
                 logger.warning("appendRow: value: " + value.substring(0, 20) + " ...");
                 logger.warning("appendRow: value length: " + value.length());
@@ -122,7 +119,7 @@ abstract public class AbstractDCContainerRDB extends AbstractDCContainer {
         try {
             pstmt = removePool.get(tableName);
             if (pstmt == null) {
-                String sql = "delete from " + tableName + " where id=? AND value=?";
+                String sql = "delete from " + tableName + " where id=? AND content=?";
                 pstmt = connection.prepareStatement(sql);
                 removePool.put(tableName, pstmt);
             }
@@ -196,7 +193,7 @@ abstract public class AbstractDCContainerRDB extends AbstractDCContainer {
         try {
             pstmt = hasPool.get(tableName);
             if (pstmt == null) {
-                String sql = "select * from " + tableName + " where id=? AND value=?";
+                String sql = "select * from " + tableName + " where id=? AND content=?";
                 // System.err.println(sql);
                 pstmt = connection.prepareStatement(sql);
                 hasPool.put(tableName, pstmt);
@@ -250,7 +247,7 @@ abstract public class AbstractDCContainerRDB extends AbstractDCContainer {
             dataSet = ds;
             predicate = pred;
 
-            String sql = "SELECT id, value FROM " + tableName;
+            String sql = "SELECT id, content FROM " + tableName;
             try {
                 stmt = connection.createStatement();
                 stmt.setFetchSize(fetchSize);
@@ -290,13 +287,11 @@ abstract public class AbstractDCContainerRDB extends AbstractDCContainer {
                 }
                 didNext = false;
 
-                // System.err.println("now I'm in next() method : " + rs.getString("id") + ", "
-                // + rs.getString("value"));
                 result = new DataCell();
                 result.setDataSet(dataSet);
                 result.setID(rs.getString("id"));
                 result.setPredicate(predicate);
-                result.setValue(rs.getString("value"));
+                result.setValue(rs.getString("content"));
             } catch (SQLException e) {
                 logger.throwing("com.github.oogasawa.datacell.container.rdb.Itr", "next", e);
             }
