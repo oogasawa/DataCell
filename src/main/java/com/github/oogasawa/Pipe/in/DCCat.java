@@ -48,7 +48,7 @@ public class DCCat implements In {
 				result = row.asTSV2();
 			}
 		} catch (Exception e) {
-			logger.throwing("com.github.oogasawa.Pipe.in.DCCat", "constructor", e);
+			logger.throwing("com.github.oogasawa.Pipe.in.DCCat", "getLine", e);
 		}
 		
 		return result;
